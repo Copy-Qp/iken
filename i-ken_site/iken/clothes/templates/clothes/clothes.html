@@ -1,0 +1,26 @@
+{% extends 'clothes/base.html' %}
+{% load i18n %}
+
+{% block content %}
+
+{{ clothes.title }}
+
+<hr>
+
+{% if clothes.photo %}
+    <img src="{{clothes.photo.url}}" width="500" height="500">
+{% endif %}
+
+<hr>
+
+{{ clothes.content }}
+
+<hr>
+
+{{ clothes.price }}
+
+<hr>
+
+<a href="{% url 'category' clothes.cat_id %}">{% trans 'Назад' %}</a>
+
+{% endblock %}

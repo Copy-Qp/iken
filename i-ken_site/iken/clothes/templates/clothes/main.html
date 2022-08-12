@@ -1,0 +1,22 @@
+{% extends 'clothes/base.html' %}
+{% load static%}
+
+{% block content %}
+<div class="main_img"><img src="{% static 'clothes/images/main_page.png' %}"></div>
+
+<ul class="cat_links">
+    {% for ct in catigories %}
+    <li>
+        <a href="{{ ct.get_absolute_url }}" class="a_large">
+            <div>
+                <img src="{% static 'clothes/images/women.png' %}" class="cat_links_img">
+                <p>{{ct.name}}</p>
+            </div>
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
+
+
